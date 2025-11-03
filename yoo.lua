@@ -1303,4 +1303,475 @@ spawn(function()
 							TextLabel.TextColor3 = Color3.fromRGB(120, 130, 230);
 							TextLabel.Text.Size = 35;
 						end;
+						local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude);v.EspMonster.TextLabel.Text = v.Name .. " - " .. Dis .. " Distance";
+					end;
+				end;
+			else
+				for i, v in pairs((game:GetService("Workspace")).Enemies:GetChildren()) do
+					if v:FindFirstChild("EspMonster") then
+						v.EspMonster:Destroy();
+					end;
+				end;
+			end;
+		end);
+	end;
+end);
+spawn(function()
+	while wait(1) do
+		pcall(function()
+			if _G.Settings.Esp["ESP Sea Beast"] then
+				for i, v in pairs((game:GetService("Workspace")).SeaBeasts:GetChildren()) do
+					if v:FindFirstChild("HumanoidRootPart") then
+						if not v:FindFirstChild("EspSeabeasts") then
+							local BillboardGui = Instance.new("BillboardGui");
+							local TextLabel = Instance.new("TextLabel");
+							BillboardGui.Parent = v;
+							BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+							BillboardGui.Active = true;
+							BillboardGui.Name = "EspSeabeasts";
+							BillboardGui.AlwaysOnTop = true;
+							BillboardGui.LightInfluence = 1;
+							BillboardGui.Size = UDim2.new(0, 200, 0, 50);
+							BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0);
+							TextLabel.Parent = BillboardGui;
+							TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+							TextLabel.BackgroundTransparency = 1;
+							TextLabel.Size = UDim2.new(0, 200, 0, 50);
+							TextLabel.Font = Enum.Font.Gotham;
+							TextLabel.TextColor3 = Color3.fromRGB(60, 240, 120);
+							TextLabel.Text.Size = 35;
+						end;
 						local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude);
+						v.EspSeabeasts.TextLabel.Text = v.Name .. " - " .. Dis .. " Distance";
+					end;
+				end;
+			else
+				for i, v in pairs((game:GetService("Workspace")).SeaBeasts:GetChildren()) do
+					if v:FindFirstChild("EspSeabeasts") then
+						v.EspSeabeasts:Destroy();
+					end;
+				end;
+			end;
+		end);
+	end;
+end);
+spawn(function()
+	while wait(1) do
+		pcall(function()
+			if _G.Settings.Esp["ESP Npc"] then
+				for i, v in pairs((game:GetService("Workspace")).NPCs:GetChildren()) do
+					if v:FindFirstChild("HumanoidRootPart") then
+						if not v:FindFirstChild("EspNpc") then
+							local BillboardGui = Instance.new("BillboardGui");
+							local TextLabel = Instance.new("TextLabel");
+							BillboardGui.Parent = v;
+							BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+							BillboardGui.Active = true;
+							BillboardGui.Name = "EspNpc";
+							BillboardGui.AlwaysOnTop = true;
+							BillboardGui.LightInfluence = 1;
+							BillboardGui.Size = UDim2.new(0, 200, 0, 50);
+							BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0);
+							TextLabel.Parent = BillboardGui;
+							TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+							TextLabel.BackgroundTransparency = 1;
+							TextLabel.Size = UDim2.new(0, 200, 0, 50);
+							TextLabel.Font = Enum.Font.Cartoon;
+							TextLabel.TextColor3 = Color3.fromRGB(200, 60, 120);
+							TextLabel.Text.Size = 45;
+						end;
+						local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude);
+						v.EspNpc.TextLabel.Text = v.Name .. " - " .. Dis .. " Distance";
+					end;end;
+			else
+				for i, v in pairs((game:GetService("Workspace")).NPCs:GetChildren()) do
+					if v:FindFirstChild("EspNpc") then
+						v.EspNpc:Destroy();
+					end;
+				end;
+			end;
+		end);
+	end;
+end);
+spawn(function()
+	while wait(1) do
+		for i, v in pairs((game:GetService("Workspace"))._WorldOrigin.Locations:GetChildren()) do
+			pcall(function()
+				if _G.Settings.Esp["ESP Mirage"] then
+					if v.Name == "Mirage Island" then
+						if not v:FindFirstChild("EspMirageIsland") then
+							local bill = Instance.new("BillboardGui", v);
+							bill.Name = "EspMirageIsland";
+							bill.ExtentsOffset = Vector3.new(0, 1, 0);
+							bill.Size = UDim2.new(1, 200, 1, 30);
+							bill.Adornee = v;
+							bill.AlwaysOnTop = true;
+							local name = Instance.new("TextLabel", bill);
+							name.Font = "Code";
+							name.FontSize = "Size14";
+							name.TextWrapped = true;
+							name.Size = UDim2.new(1, 0, 1, 0);
+							name.TextYAlignment = "Top";
+							name.BackgroundTransparency = 1;
+							name.TextStrokeTransparency = 0.5;
+							name.TextColor3 = Color3.fromRGB(50, 180, 50);
+						else
+							v.EspMirageIsland.TextLabel.Text = v.Name .. "   \n" .. round((((game:GetService("Players")).LocalPlayer.Character.Head.Position - v.Position)).Magnitude / 3) .. " M";
+						end;
+					end;
+				elseif v:FindFirstChild("EspMirageIsland") then
+					(v:FindFirstChild("EspMirageIsland")):Destroy();
+				end;
+			end);
+		end;
+	end;
+end);
+spawn(function()
+	while wait(1) do
+		for i, v in pairs((game:GetService("Workspace"))._WorldOrigin.Locations:GetChildren()) do
+			pcall(function()
+				if _G.Settings.Esp["ESP Kitsune"] then
+					if v.Name == "Kitsune Island" then
+						if not v:FindFirstChild("EspKitsuneIsland") then
+							local bill = Instance.new("BillboardGui", v);
+							bill.Name = "EspKitsuneIsland";
+							bill.ExtentsOffset = Vector3.new(0, 1, 0);
+							bill.Size = UDim2.new(1, 200, 1, 30);
+							bill.Adornee = v;
+							bill.AlwaysOnTop = true;
+							local name = Instance.new("TextLabel", bill);
+							name.Font = "Code";
+							name.FontSize = "Size14";
+							name.TextWrapped = true;
+							name.Size = UDim2.new(1, 0, 1, 0);
+							name.TextYAlignment = "Top";
+							name.BackgroundTransparency = 1;
+							name.TextStrokeTransparency = 0.5;
+							name.TextColor3 = Color3.fromRGB(40, 40, 180);
+						else
+							v.EspKitsuneIsland.TextLabel.Text = v.Name .. "   \n" .. round((((game:GetService("Players")).LocalPlayer.Character.Head.Position - v.Position)).Magnitude / 3) .. " M";
+						end;
+					end;
+				elseif v:FindFirstChild("EspKitsuneIsland") then
+					(v:FindFirstChild("EspKitsuneIsland")):Destroy();
+				end;
+			end);
+		end;end;
+end);
+spawn(function()
+	while wait(1) do
+		for i, v in pairs((game:GetService("Workspace"))._WorldOrigin.Locations:GetChildren()) do
+			pcall(function()
+				if _G.Settings.Esp["ESP Frozen"] then
+					if v.Name == "Frozen Dimension" then
+						if not v:FindFirstChild("EspFrozen") then
+							local bill = Instance.new("BillboardGui", v);
+							bill.Name = "EspFrozen";
+							bill.ExtentsOffset = Vector3.new(0, 1, 0);
+							bill.Size = UDim2.new(1, 200, 1, 30);
+							bill.Adornee = v;
+							bill.AlwaysOnTop = true;
+							local name = Instance.new("TextLabel", bill);
+							name.Font = "Code";
+							name.FontSize = "Size14";
+							name.TextWrapped = true;
+							name.Size = UDim2.new(1, 0, 1, 0);
+							name.TextYAlignment = "Top";
+							name.BackgroundTransparency = 1;
+							name.TextStrokeTransparency = 0.5;
+							name.TextColor3 = Color3.fromRGB(50, 180, 255);
+						else
+							v.EspFrozen.TextLabel.Text = v.Name .. "   \n" .. round((((game:GetService("Players")).LocalPlayer.Character.Head.Position - v.Position)).Magnitude / 3) .. " M";
+						end;
+					end;
+				elseif v:FindFirstChild("EspFrozen") then
+					(v:FindFirstChild("EspFrozen")):Destroy();
+				end;
+			end);
+		end;
+	end;
+end);
+spawn(function()
+	while wait(1) do
+		for i, v in pairs((game:GetService("Workspace"))._WorldOrigin.Locations:GetChildren()) do
+			pcall(function()
+				if _G.Settings.Esp["ESP Prehistoric"] then
+					if v.Name == "Prehistoric Island" then
+						if not v:FindFirstChild("EspPrehistoric") then
+							local bill = Instance.new("BillboardGui", v);
+							bill.Name = "EspPrehistoric";
+							bill.ExtentsOffset = Vector3.new(0, 1, 0);
+							bill.Size = UDim2.new(1, 200, 1, 30);
+							bill.Adornee = v;
+							bill.AlwaysOnTop = true;
+							local name = Instance.new("TextLabel", bill);
+							name.Font = "Code";
+							name.FontSize = "Size14";
+							name.TextWrapped = true;
+							name.Size = UDim2.new(1, 0, 1, 0);
+							name.TextYAlignment = "Top";
+							name.BackgroundTransparency = 1;
+							name.TextStrokeTransparency = 0.5;
+							name.TextColor3 = Color3.fromRGB(200, 50, 40);
+						else
+							v.EspPrehistoric.TextLabel.Text = v.Name .. "   \n" .. round((((game:GetService("Players")).LocalPlayer.Character.Head.Position - v.Position)).Magnitude / 3) .. " M";
+						end;
+					end;
+				elseif v:FindFirstChild("EspPrehistoric") then
+					(v:FindFirstChild("EspPrehistoric")):Destroy();
+				end;
+			end);
+		end;
+	end;
+end);
+spawn(function()
+	while wait(1) do
+		for i, v in pairs((game:GetService("Workspace")).NPCs:GetChildren()) do
+			pcall(function()
+				if _G.Settings.Esp["ESP Advanced Fruit Dealer"] then
+					if v.Name == "Advanced Fruit Dealer" then
+						if not v:FindFirstChild("EspAdvanceFruitDealer") then
+							local bill = Instance.new("BillboardGui", v);
+							bill.Name = "EspAdvanceFruitDealer";
+							bill.ExtentsOffset = Vector3.new(0, 1, 0);
+							bill.Size = UDim2.new(1, 200, 1, 30);
+							bill.Adornee = v;
+							bill.AlwaysOnTop = true;
+							local name = Instance.new("TextLabel", bill);
+							name.Font = "Code";
+							name.FontSize = "Size14";
+							name.TextWrapped = true;
+							name.Size = UDim2.new(1, 0, 1, 0);
+							name.TextYAlignment = "Top";
+							name.BackgroundTransparency = 1;
+							name.TextStrokeTransparency = 0.5;
+							name.TextColor3 = Color3.fromRGB(250, 50, 50);
+						else
+							v.EspAdvanceFruitDealer.TextLabel.Text = v.Name .. "   \n" .. round((((game:GetService("Players")).LocalPlayer.Character.Head.Position - v.Position)).Magnitude / 3) .. " M";
+						end;
+					end;
+				elseif v:FindFirstChild("EspAdvanceFruitDealer") then
+					(v:FindFirstChild("EspAdvanceFruitDealer")):Destroy();
+				end;
+			end);
+		end;
+	end;
+end);
+spawn(function()
+	while wait(1) do
+		for i, v in pairs((game:GetService("Workspace")).NPCs:GetChildren()) do
+			pcall(function()
+				if _G.Settings.Esp["ESP Aura"] then
+					if v.Name == "Master of Enhancement" then
+						if not v:FindFirstChild("EspAura") then
+							local bill = Instance.new("BillboardGui", v);
+							bill.Name = "EspAura";
+							bill.ExtentsOffset = Vector3.new(0, 1, 0);
+							bill.Size = UDim2.new(1, 200, 1, 30);
+							bill.Adornee = v;
+							bill.AlwaysOnTop = true;
+							local name = Instance.new("TextLabel", bill);
+							name.Font = "Code";
+							name.FontSize = "Size14";
+							name.TextWrapped = true;
+							name.Size = UDim2.new(1, 0, 1, 0);
+							name.TextYAlignment = "Top";
+							name.BackgroundTransparency = 1;
+							name.TextStrokeTransparency = 0.5;
+							name.TextColor3 = Color3.fromRGB(200, 55, 255);
+						else
+							v.EspAura.TextLabel.Text = v.Name .. "   \n" .. round((((game:GetService("Players")).LocalPlayer.Character.Head.Position - v.Position)).Magnitude / 3) .. " M";
+						end;		pos.maxForce = Vector3.new(math.huge, math.huge, math.huge);
+		pos.position = torso.Position;
+		gyro.maxTorque = Vector3.new(9000000000, 9000000000, 9000000000);
+		gyro.CFrame = torso.CFrame;
+		repeat
+			wait();
+			localplayer.Character.Humanoid.PlatformStand = true;
+			local new = gyro.CFrame - gyro.CFrame.p + pos.position;
+			if not keys.w and (not keys.s) and (not keys.a) and (not keys.d) then
+				speed = 1;
+			end;
+			if keys.w then
+				new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * speed;
+				speed = speed + speedSET;
+			end;
+			if keys.s then
+				new = new - workspace.CurrentCamera.CoordinateFrame.lookVector * speed;
+				speed = speed + speedSET;
+			end;
+			if keys.d then
+				new = new * CFrame.new(speed, 0, 0);
+				speed = speed + speedSET;
+			end;
+			if keys.a then
+				new = new * CFrame.new((-speed), 0, 0);
+				speed = speed + speedSET;
+			end;
+			if speed > speedSET then
+				speed = speedSET;
+			end;
+			pos.position = new.p;
+			if keys.w then
+				gyro.CFrame = workspace.CurrentCamera.CoordinateFrame * CFrame.Angles((-math.rad((speed * 15))), 0, 0);
+			elseif keys.s then
+				gyro.CFrame = workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(math.rad((speed * 15)), 0, 0);
+			else
+				gyro.CFrame = workspace.CurrentCamera.CoordinateFrame;
+			end;
+		until not Fly;
+		if gyro thenfunction topos(pos)
+	task.spawn(function()
+		pcall(function()
+			if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+				game.Players.LocalPlayer.Character.Humanoid.Sit = true;
+			end;
+			local player = (game:GetService("Players")).LocalPlayer;
+			local character = player.Character;
+			local humanoidRootPart = character.HumanoidRootPart;
+			if player:DistanceFromCharacter(pos.Position) <= 50 then
+				humanoidRootPart.CFrame = pos;
+				if character:FindFirstChild("Root") then
+					character.Root:Destroy();
+					wait();
+					topos(humanoidRootPart.CFrame);
+					wait();
+				end;
+				if character:FindFirstChild("Root") then
+					character.Root:Remove();
+				end;
+			elseif not character:FindFirstChild("Root") then
+				local rootPart = Instance.new("Part", character);
+				rootPart.Size = Vector3.new(1, 0.5, 1);
+				rootPart.Name = "Root";
+				rootPart.Anchored = true;
+				rootPart.Transparency = 1;
+				rootPart.CanCollide = false;
+				rootPart.CFrame = humanoidRootPart.CFrame;
+			end;
+			local distance = (humanoidRootPart.Position - pos.Position).Magnitude;
+			local tweenService = game:GetService("TweenService");
+			local tweenInfo = TweenInfo.new(distance / _G.Settings.Setting["Player Tween Speed"], Enum.EasingStyle.Linear);
+			local success, tweenError = pcall(function()
+				local tween = tweenService:Create(character.Root, tweenInfo, {
+					CFrame = pos
+				});tween:Play();
+			end);
+			if _G.StopTween == true then
+				tween:Cancel();
+				_G.Clip = false;
+			end;
+			if not success then
+				return tweenError;
+			end;
+			character.Root.CFrame = humanoidRootPart.CFrame;
+			if success and character:FindFirstChild("Root") then
+				pcall(function()
+					local distanceFromTarget = (humanoidRootPart.Position - pos.Position).Magnitude;
+					if distanceFromTarget >= 50 then
+						task.spawn(function()
+							pcall(function()
+								if (character.Root.Position - humanoidRootPart.Position).Magnitude > 200 then
+									character.Root.CFrame = humanoidRootPart.CFrame;
+								else
+									humanoidRootPart.CFrame = character.Root.CFrame;
+								end;
+							end);
+						end);
+					elseif distanceFromTarget >= 25 and distanceFromTarget < 40 then
+						humanoidRootPart.CFrame = pos;
+					elseif distanceFromTarget < 25 then
+						humanoidRootPart.CFrame = pos;
+					end;
+				end);
+			end;
+			local stoppos = {};
+			function stoppos:Stop()
+				tween:Cancel();
+			end;
+			return stoppos;
+		end);
+	end);
+end;
+task.spawn(function()
+	while task.wait() do
+		pcall(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.Root.CFrame;
+			if (game.Players.LocalPlayer.Character.Root.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 1 then
+				game.Players.LocalPlayer.Character.Root.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+			end;
+		end);
+	end;
+end);
+function tween(Pos)
+	local Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude;
+	local tween = ((game:GetService("TweenService")):Create((game:GetService("Players")).LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Distance / _G.Settings.Setting["Player Tween Speed"], Enum.EasingStyle.Linear), {
+		CFrame = Pos
+	})):Play();
+	function stoppos:Stop()
+		tween:Cancel();
+	end;
+	return stoppos;
+end;
+function fastpos(Pos)
+	Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude;
+	Speed = 1000;Farm Bone"] or _G.Settings.Farm["Auto Kill Dough King"] or _G.Settings.Items["Auto Soul Guitar"] or _G.Settings.Items["Auto Tushita"] or _G.Settings.Farm["Auto Elite Hunter"] or _G.AutoKillSelectedPlayer or _G.Settings.Items["Auto Rainbow Haki"] or _G.Settings.Items["Auto Dark Dagger"] or _G.Settings.Farm["Auto Farm Ectoplasm"] or _G.Settings.Farm["Auto Observation V2"] or _G.Settings.Farm["Auto Musketeer Hat"] or _G.Settings.Items["Auto Holy Torch"] or _G.Settings.Items["Auto Hallow Scythe"] or _G.Settings.Farm["Auto Farm Katakuri"] or _G.Settings.Farm["Auto Farm Conjured Cocoa"] or _G.Settings.Farm["Auto Farm Fish Tail"] or _G.Settings.Farm["Auto Farm Gunpowder"] or _G.Settings.Farm["Auto Farm Dragon Scale"] or _G.Settings.Farm["Auto Farm Scrap Metal"] or _G.Settings.Farm["Auto Farm Mini Tusk"] or _G.Settings.Items["Auto Buddy Sword"] or _G.Settings.Items["Auto Canvander"] or _G.Settings.Farm["Auto Farm Leather"] or _G.Settings.Raid["Auto Dungeon"] then
+					if not (game:GetService("Players")).LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+						local Noclip = Instance.new("BodyVelocity");
+						Noclip.Name = "BodyClip";
+						Noclip.Parent = (game:GetService("Players")).LocalPlayer.Character.HumanoidRootPart;
+						Noclip.MaxForce = Vector3.new(100000, 100000, 100000);
+						Noclip.Velocity = Vector3.new(0, 0, 0);
+					end;
+				end;
+			end;
+		end;
+	end);
+end);
+spawn(function()
+	pcall(function()
+		while wait() do
+			if World3 then
+				if _G.Settings.Farm["Auto Pirate Raid"] or _G.Settings.Race["Auto Race V3"] or _G.Settings.Farm["Auto Kill Cake Prince"] or _G.Settings.SeaStack["Teleport To Kitsune Island"] or _G.Settings.SeaStack["Teleport To Frozen Dimension"] or _G.Settings.SeaStack["Sail To Frozen Dimension"] or _G.Settings.SeaStack["Summon Frozen Dimension"] or _G.Settings.SeaStack["Summon Kitsune Island"] or _G.Settings.SeaStack["Teleport To Mirage Island"] or _G.Settings.Race["Auto Train"] or _G.Settings.Items["Auto Press Haki Button"] or _G.Settings.SeaEvent["Sail Boat"] or _G.Settings.Items["Auto Arena Trainer"] or _G.Settings.Race["Auto Kill Player After Trial"] or _G.Settings.Race["Tween To Highest Mirage"] or _G.Settings.Race["Auto Trial"] or _G.Settings.Race["Find Blue Gear"] or _G.Settings.Combat["Auto Kill Player Quest"] or _G.Settings.Items["Auto Cursed Dual Katana"] or _G.Settings.Farm["Auto Farm Bone"] or _G.Settings.Farm["Auto Kill Dough King"] or _G.Settings.Items["Auto Soul Guitar"] or _G.Settings.Items["Auto Tushita"] or _G.Settings.Farm["Auto Elite Hunter"] or _G.AutoKillSelectedPlayer or _G.Settings.Items["Auto Rainbow Haki"] or _G.Settings.Items["Auto Dark Dagger"] or _G.Settings.Farm["Auto Farm Ectoplasm"] or _G.Settings.Farm["Auto Observation V2"] or _G.Settings.Farm["Auto Musketeer Hat"] or _G.Settings.Items["Auto Holy Torch"] or _G.Settings.Items["Auto Hallow Scythe"] or _G.Settings.Farm["Auto Farm Katakuri"] or _G.Settings.Farm["Auto Farm Conjured Cocoa"] or _G.Settings.Farm["Auto Farm Fish Tail"] or _G.Settings.Farm["Auto Farm Gunpowder"] or _G.Settings.Farm["Auto Farm Dragon Scale"] or _G.Settings.Farm["Auto Farm Scrap Metal"] or _G.Settings.Farm["Auto Farm Mini Tusk"] or _G.Settings.Items["Auto Buddy Sword"] or _G.Settings.Items["Auto Canvander"] or _G.Settings.Farm["Auto Farm Leather"] or _G.Settings.Raid["Auto Dungeon"] then
+					for _, v in pairs((game:GetService("Players")).LocalPlayer.Character:GetDescendants()) do
+						if v:IsA("BasePart") then
+							v.CanCollide = false;
+						end;
+					end;
+				end;
+			end;
+		end;
+	end);
+end);
+spawn(function()
+	pcall(function()
+		while wait() do
+			if _G.Settings.Main["Auto Farm"] or _G.Settings.Farm["Auto Farm Chest Tween"] or _G.Settings.Items["Auto Electric Claw"] or _G.Settings.Main["Auto Farm Fruit Mastery"] or _G.Settings.Main["Auto Farm Gun Mastery"] or _G.TeleportIsland or _G.AutoKillSelectedPlayer or _G.TeleportToPlayer or _G.Settings.Farm["Auto Farm Observation"] or _G.Settings.Fruit["Tween To Fruit"] or _G.TeleportNPC or _G.Settings.Main["Auto Farm Mob"] or _G.Settings.Main["Auto Farm Fast"] or _G.Settings.Main["Auto Farm All Boss"] or _G.Settings.Main["Auto Farm Boss"] or _G.Settings.Main["Auto Farm Sword Mastery"] then
+				if not (game:GetService("Players")).LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+					local Noclip = Instance.new("BodyVelocity");
+					Noclip.Name = "BodyClip";
+					Noclip.Parent = (game:GetService("Players")).LocalPlayer.Character.HumanoidRootPart;
+					Noclip.MaxForce = Vector3.new(100000, 100000, 100000);
+					Noclip.Velocity = Vector3.new(0, 0, 0);
+				end;
+			end;
+		end;
+	end);
+end);
+spawn(function()
+	pcall(function()
+		(game:GetService("RunService")).Stepped:Connect(function()
+			if _G.Settings.Main["Auto Farm"] or _G.Settings.Farm["Auto Farm Chest Tween"] or _G.Settings.Items["Auto Electric Claw"] or _G.Settings.Main["Auto Farm Fruit Mastery"] or _G.Settings.Main["Auto Farm Gun Mastery"] or _G.TeleportIsland or _G.AutoKillSelectedPlayer or _G.TeleportToPlayer or _G.Settings.Farm["Auto Farm Observation"] or _G.Settings.Fruit["Tween To Fruit"] or _G.TeleportNPC or _G.Settings.Main["Auto Farm Mob"] or _G.Settings.Main["Auto Farm Fast"] or _G.Settings.Main["Auto Farm All Boss"] or _G.Settings.Main["Auto Farm Boss"] or _G.Settings.Main["Auto Farm Sword Mastery"] then
+				for _, v in pairs((game:GetService("Players")).LocalPlayer.Character:GetDescendants()) do
+					if v:IsA("BasePart") then
+						v.CanCollide = false;
+					end;
+				end;
+			end;
+		end);
+	end);
+end);
+function InstancePos(pos)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos;
+end;
+									
